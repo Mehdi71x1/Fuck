@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fucked By Fucker Boy</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+        body {
+            background: black;
+            color: #00ff00;
+            font-family: 'Press Start 2P', cursive;
+            text-align: center;
+            padding: 50px;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 50px;
+            text-shadow: 0px 0px 20px red;
+            animation: glow 1s infinite alternate;
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 0px 0px 10px red; }
+            100% { text-shadow: 0px 0px 20px white; }
+        }
+
+        .hacked {
+            font-size: 25px;
+            margin-top: 20px;
+            animation: colorchange 3s infinite alternate;
+        }
+
+        @keyframes colorchange {
+            0% { color: red; }
+            50% { color: yellow; }
+            100% { color: lime; }
+        }
+
+        .skull {
+            font-size: 80px;
+            margin-top: 50px;
+            animation: skullAnimation 2s infinite alternate;
+        }
+
+        @keyframes skullAnimation {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.2); }
+        }
+
+        .glitch {
+            font-size: 30px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0.75;
+        }
+
+        .glitch::before {
+            animation: glitch 0.3s infinite;
+            color: red;
+            left: 2px;
+        }
+
+        .glitch::after {
+            animation: glitch 0.3s infinite reverse;
+            color: blue;
+            left: -2px;
+        }
+
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+
+        /* Hide the audio player */
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="glitch" data-text="FUCKED BY FUCKER BOY">FUCKED BY FUCKER BOY</h1>
+    <p class="hacked">Your Security is Zero!</p>
+    <div class="skull">💀</div>
+    <p class="hacked">You Got Owned!</p>
+
+    <audio id="myAudio" class="hidden" loop>
+        <source src="https://ia600807.us.archive.org/1/items/fuck-attitudecreator-mehdi-hasan_202503/Fuck%20Attitude%28creator%20Mehdi%20Hasan%29.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // Autoplay with user interaction workaround
+        document.body.addEventListener('click', function() {
+            let audio = document.getElementById("myAudio");
+            audio.play().catch(error => console.log("Autoplay blocked:", error));
+        }, { once: true });
+
+        // Fallback autoplay attempt
+        window.onload = function() {
+            let audio = document.getElementById("myAudio");
+            let playPromise = audio.play();
+
+            if (playPromise !== undefined) {
+                playPromise.catch(error => console.log("Autoplay blocked, user action required:", error));
+            }
+        };
+    </script>
+</body>
+</html>
