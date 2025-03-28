@@ -1,123 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fucked By Fucker Boy</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fucked By Fucker Boy</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-        body {
-            background: black;
-            color: #00ff00;
-            font-family: 'Press Start 2P', cursive;
-            text-align: center;
-            padding: 50px;
-            overflow: hidden;
-        }
+    body {
+      background: black;
+      color: #00ff00;
+      font-family: 'Press Start 2P', cursive;
+      text-align: center;
+      padding: 50px;
+      overflow: hidden;
+    }
 
-        h1 {
-            font-size: 50px;
-            text-shadow: 0px 0px 20px red;
-            animation: glow 1s infinite alternate;
-        }
+    h1 {
+      font-size: 50px;
+      text-shadow: 0px 0px 20px red;
+      animation: glow 1s infinite alternate;
+    }
 
-        @keyframes glow {
-            0% { text-shadow: 0px 0px 10px red; }
-            100% { text-shadow: 0px 0px 20px white; }
-        }
+    @keyframes glow {
+      0% { text-shadow: 0px 0px 10px red; }
+      100% { text-shadow: 0px 0px 20px white; }
+    }
 
-        .hacked {
-            font-size: 25px;
-            margin-top: 20px;
-            animation: colorchange 3s infinite alternate;
-        }
+    .hacked {
+      font-size: 25px;
+      margin-top: 20px;
+      animation: colorchange 3s infinite alternate;
+    }
 
-        @keyframes colorchange {
-            0% { color: red; }
-            50% { color: yellow; }
-            100% { color: lime; }
-        }
+    @keyframes colorchange {
+      0% { color: red; }
+      50% { color: yellow; }
+      100% { color: lime; }
+    }
 
-        .skull {
-            font-size: 80px;
-            margin-top: 50px;
-            animation: skullAnimation 2s infinite alternate;
-        }
+    .skull {
+      font-size: 80px;
+      margin-top: 50px;
+      animation: skullAnimation 2s infinite alternate;
+    }
 
-        @keyframes skullAnimation {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.2); }
-        }
+    @keyframes skullAnimation {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.2); }
+    }
 
-        .glitch {
-            font-size: 30px;
-            position: relative;
-            display: inline-block;
-        }
+    .glitch {
+      font-size: 30px;
+      position: relative;
+      display: inline-block;
+    }
 
-        .glitch::before,
-        .glitch::after {
-            content: attr(data-text);
-            position: absolute;
-            left: 0;
-            top: 0;
-            opacity: 0.75;
-        }
+    .glitch::before,
+    .glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0.75;
+    }
 
-        .glitch::before {
-            animation: glitch 0.3s infinite;
-            color: red;
-            left: 2px;
-        }
+    .glitch::before {
+      animation: glitch 0.3s infinite;
+      color: red;
+      left: 2px;
+    }
 
-        .glitch::after {
-            animation: glitch 0.3s infinite reverse;
-            color: blue;
-            left: -2px;
-        }
+    .glitch::after {
+      animation: glitch 0.3s infinite reverse;
+      color: blue;
+      left: -2px;
+    }
 
-        @keyframes glitch {
-            0% { transform: translate(0); }
-            20% { transform: translate(-2px, 2px); }
-            40% { transform: translate(-2px, -2px); }
-            60% { transform: translate(2px, 2px); }
-            80% { transform: translate(2px, -2px); }
-            100% { transform: translate(0); }
-        }
+    @keyframes glitch {
+      0% { transform: translate(0); }
+      20% { transform: translate(-2px, 2px); }
+      40% { transform: translate(-2px, -2px); }
+      60% { transform: translate(2px, 2px); }
+      80% { transform: translate(2px, -2px); }
+      100% { transform: translate(0); }
+    }
 
-        /* Hide the audio player */
-        .hidden {
-            display: none;
-        }
-    </style>
+    .hidden {
+      display: none;
+    }
+
+    #hackButton {
+      margin-top: 30px;
+      padding: 15px 30px;
+      font-size: 18px;
+      background-color: red;
+      color: white;
+      border: none;
+      cursor: pointer;
+      animation: glow 1s infinite alternate;
+    }
+
+    #popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: black;
+      padding: 20px;
+      border: 3px solid red;
+      z-index: 9999;
+      display: none;
+    }
+
+    #popup img {
+      width: 300px;
+      height: auto;
+    }
+
+    #toast {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #222;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      display: none;
+      font-size: 14px;
+      z-index: 9999;
+    }
+  </style>
 </head>
 <body>
-    <h1 class="glitch" data-text="FUCKED BY FUCKER BOY">FUCKED BY FUCKER BOY</h1>
-    <p class="hacked">Your Security is Zero!</p>
-    <div class="skull">💀</div>
-    <p class="hacked">You Got Owned!</p>
+  <h1 class="glitch" data-text="FUCKED BY FUCKER BOY">FUCKED BY FUCKER BOY</h1>
+  <p class="hacked">Your Security is Zero!</p>
+  <div class="skull">💀</div>
+  <p class="hacked">You Got Owned!</p>
 
-    <audio id="myAudio" class="hidden" loop>
-        <source src="https://ia600807.us.archive.org/1/items/fuck-attitudecreator-mehdi-hasan_202503/Fuck%20Attitude%28creator%20Mehdi%20Hasan%29.mp3" type="audio/mpeg">
-    </audio>
+  <button id="hackButton">Touch Here If You're Brave</button>
 
-    <script>
-        // Autoplay with user interaction workaround
-        document.body.addEventListener('click', function() {
-            let audio = document.getElementById("myAudio");
-            audio.play().catch(error => console.log("Autoplay blocked:", error));
-        }, { once: true });
+  <div id="popup">
+    <img src="x.png" alt="Popped Image"/>
+  </div>
 
-        // Fallback autoplay attempt
-        window.onload = function() {
-            let audio = document.getElementById("myAudio");
-            let playPromise = audio.play();
+  <div id="toast">I am your Dad</div>
 
-            if (playPromise !== undefined) {
-                playPromise.catch(error => console.log("Autoplay blocked, user action required:", error));
-            }
-        };
-    </script>
+  <audio id="myAudio" class="hidden" loop autoplay>
+    <source src="x.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const hackBtn = document.getElementById("hackButton");
+    const popup = document.getElementById("popup");
+    const audio = document.getElementById("myAudio");
+    const toast = document.getElementById("toast");
+
+    // Fullscreen + popup image
+    hackBtn.addEventListener("click", () => {
+      if (document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen();
+      }
+      popup.style.display = "block";
+      audio.play().catch(err => console.log("Audio error:", err));
+    });
+
+    // Back button trap
+    history.pushState(null, "", location.href);
+    window.onpopstate = function () {
+      history.pushState(null, "", location.href);
+      showToast();
+    };
+
+    function showToast() {
+      toast.style.display = "block";
+      setTimeout(() => {
+        toast.style.display = "none";
+      }, 2000);
+    }
+
+    // Try to autoplay once
+    window.onload = function () {
+      audio.play().catch(err => console.log("Autoplay blocked:", err));
+    };
+  </script>
 </body>
 </html>
